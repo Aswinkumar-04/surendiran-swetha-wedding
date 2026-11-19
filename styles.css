@@ -1127,7 +1127,7 @@ h2 em {
   width: 48px;
   height: 1.5px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 0 auto 14px;
+  margin: 10px auto 14px;
 }
 
 .box-family-desc {
