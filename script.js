@@ -116,12 +116,6 @@
       intro.classList.add('open');
     }
 
-    // Immediately reveal hero card behind the doors
-    var heroCard = document.querySelector('#invite .reveal');
-    if (heroCard) {
-      heroCard.classList.add('show');
-    }
-
     // Start background music
     playMusic();
 
