@@ -1,551 +1,369 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#3a1226" />
+    <meta name="description" content="Wedding Invitation of S. Surendiran & R. Swetha — Sunday, 22 November 2026" />
+    <title>Surendiran ❤️ Swetha | Wedding Invitation</title>
+    <link rel="icon" type="image/png" href="assets/custom-logo-gold.png" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#173F32" />
-  <meta name="description" content="Wedding Invitation of S. Surendiran & R. Swetha — Sunday, 22 November 2026" />
-  <title>Surendiran &amp; Swetha | Wedding Invitation</title>
-  <link rel="icon" type="image/png" href="assets/custom-logo-gold.png" />
+    <!-- Google & CDN Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/honey-script" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Petit+Formal+Script&family=Alex+Brush&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-
-  <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body class="intro-active">
-  <!-- Ambient floating golden dust & jasmine petals -->
-  <canvas id="particles" aria-hidden="true"></canvas>
-
-  <!-- Scroll progress indicator -->
-  <div id="scroll-progress" aria-hidden="true"></div>
-
-  <!-- 1. FULLSCREEN OPENING / INTRO SECTION -->
-  <div id="opening">
-    <div class="opening-photo-bg" aria-hidden="true"></div>
-    <div class="opening-fade-veil"></div>
-
-    <!-- Opening Cover Overlay -->
-    <div class="opening-cover" id="opening-cover">
-      <div class="opening-cover-content">
-        <a href="https://www.suvphotography.com/" target="_blank" rel="noopener" class="opening-logo-link"
-          aria-label="SUV Photography Website">
-          <img class="opening-logo" src="assets/custom-logo-white.png" alt="SUV Photography Logo" width="105"
-            height="48" />
-        </a>
-        <div class="opening-mark">|| ஸ்ரீ முனீஸ்வரர் துணை ||</div>
-        <div class="opening-names">
-          Surendiran
-          <em>&</em>
-          Swetha
-        </div>
-        <div class="open-invitation-wrap">
-          <span class="btn-halo" aria-hidden="true"></span>
-          <button class="open-invitation-btn" id="open-invitation-btn">
-            <span class="btn-flourish" aria-hidden="true"></span>
-            <span class="flame-dot" aria-hidden="true"></span>
-            <span class="btn-label">Open Invitation</span>
-            <span class="btn-flourish btn-flourish--right" aria-hidden="true"></span>
-          </button>
-        </div>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 1. INTERACTIVE TEMPLE DOOR OPENING SCREEN -->
+    <div class="intro" id="intro" aria-label="Open invitation">
+      <div class="door door-left" aria-hidden="true"></div>
+      <div class="door door-right" aria-hidden="true"></div>
+      <div class="intro-shade" aria-hidden="true"></div>
+      <div class="intro-sparkles" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
       </div>
+      <button class="intro-center" id="openInvite" aria-label="Touch here to open">
+        <span class="spark">✦</span>
+        <span class="couple-script">Surendiran</span>
+        <span class="heart">♥</span>
+        <span class="couple-script">Swetha</span>
+        <span class="tap-ring" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img" fill="none" stroke="currentColor">
+            <path d="M31 52V31.5a3.5 3.5 0 0 1 7 0v8l2.5-2.5a3.5 3.5 0 0 1 5 0l2 2 1.5-1.5a3.5 3.5 0 0 1 5 0l1 1a8 8 0 0 1 2.3 6.7L56 52c-.8 6-5.5 10-11.5 10H36c-5.8 0-10.7-3.8-12.4-9.3l-4.2-13.2a3.8 3.8 0 0 1 7.2-2.3l4.4 9.2V21a3.5 3.5 0 0 1 7 0v14.5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M20 16c0-7 5.4-12 12-12s12 5 12 12M13 19C13 8.5 21.5 0 32 0s19 8.5 19 19" stroke-width="2" stroke-linecap="round" opacity=".75"></path>
+          </svg>
+        </span>
+        <small>TOUCH HERE TO OPEN</small>
+      </button>
     </div>
 
-    <!-- Skip Intro Button -->
-    <button class="skip-intro is-active" id="skip-intro" aria-label="Skip introduction">Skip Intro</button>
-  </div>
+    <!-- 2. BACKGROUND WEDDING MUSIC AUDIO & FLOATING PLAYER -->
+    <audio id="bgMusic" loop preload="auto">
+      <source src="assets/wedding-music.mp3" type="audio/mpeg" />
+    </audio>
+    <button class="music-fab" id="musicBtn" aria-label="Play music">♫</button>
 
-  <!-- 2. MAIN WEDDING INVITATION DETAILS -->
-  <main id="main">
-    <!-- HERO SECTION -->
-    <section id="hero" class="section bg-a bg-a-hero">
-      <div class="bg-layer" aria-hidden="true"></div>
-      <div class="overlay overlay-ivory" aria-hidden="true"></div>
-      <div class="section-inner">
-        <!-- SUV Photography Logo Link -->
-        <a href="https://www.suvphotography.com/" target="_blank" rel="noopener" class="hero-logo-link reveal"
-          aria-label="SUV Photography Website">
-          <img class="hero-logo" src="assets/custom-logo-gold.png" alt="SUV Photography Logo" width="90" height="42" />
-        </a>
-
-        <div class="hero-mark reveal">|| ஸ்ரீ முனீஸ்வரர் துணை ||</div>
-
-        <!-- Traditional Sacred Diya / Lamp SVG -->
-        <svg class="lamp-svg reveal" width="44" height="44" viewBox="0 0 64 64" aria-hidden="true">
-          <path class="lamp-flame" d="M32 12c-2 4.5-6 7-6 12.5 0 3.6 2.7 6 6 6s6-2.4 6-6c0-5.5-4-8-6-12.5z" fill="none"
-            stroke="#B58A3A" stroke-width="1.6"></path>
-          <path d="M16 42c0-5 7-8.5 16-8.5s16 3.5 16 8.5-7 6-16 6-16-1-16-6z" fill="none" stroke="#B58A3A"
-            stroke-width="1.4"></path>
-          <line x1="32" y1="45" x2="32" y2="55" stroke="#B58A3A" stroke-width="1.4"></line>
-          <line x1="19" y1="55" x2="45" y2="55" stroke="#B58A3A" stroke-width="1.4"></line>
-        </svg>
-
-        <div class="hero-eyebrow reveal"
-          style="margin-top: 10px; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-deep); font-weight: 500;">
-          With the blessings of the Almighty
-        </div>
-
-        <h1 class="hero-names reveal-scale" style="margin-top: 10px;">
-          <span class="hero-name-line">S. Surendiran <small
-              style="font-size: 0.45em; color: var(--gold-deep); font-weight: 500;">B.E.</small></span>
-          <span class="hero-amp">&amp;</span>
-          <span class="hero-name-line">R. Swetha <small
-              style="font-size: 0.45em; color: var(--gold-deep); font-weight: 500;">M.Sc., B.Ed.</small></span>
-        </h1>
-
-        <div class="ornament-divider reveal">
-          <span class="line"></span>
-          <span class="diamond"></span>
-          <span class="line"></span>
-        </div>
-
-        <div class="hero-sub reveal">Wedding Invitation &bull; திருமண அழைப்பிதழ்</div>
-        <div class="hero-date reveal">Sunday, 22 November 2026</div>
-        <div class="hero-sub reveal"
-          style="font-size: 13px; text-transform: none; letter-spacing: 0.08em; margin-top: 4px; font-family: 'Noto Serif Tamil', serif;">
-          பரபவ வருடம் கார்த்திகை மாதம் 06 &bull; ஞாயிற்றுக்கிழமை
-        </div>
-
-        <!-- Couple quote -->
-        <div class="hero-quote reveal">
-          Two souls, one heart, a journey of a lifetime begins
-        </div>
-      </div>
-
-      <div class="scroll-cue">
-        <span>Scroll to Explore</span>
-        <span class="stem"></span>
-      </div>
-    </section>
-
-    <!-- COUNTDOWN SECTION -->
-    <section id="countdown-section" class="section bg-b bg-b-ceremony">
-      <div class="bg-layer" aria-hidden="true"></div>
-      <div class="overlay overlay-cream" aria-hidden="true"></div>
-      <div class="section-inner">
-        <div class="eyebrow reveal">Counting Days To Forever</div>
-        <h2 class="section-title reveal">The Wedding Countdown</h2>
-
-        <div class="ornament-divider reveal" style="margin-top: 14px;">
-          <span class="line"></span>
-          <span class="diamond"></span>
-          <span class="line"></span>
-        </div>
-
-        <div class="countdown reveal" id="countdown-wedding" aria-label="Countdown to the wedding ceremony"
-          style="margin-top: 28px;">
-          <div class="unit">
-            <div class="flip-card"><span class="num" data-d="">00</span></div>
-            <span class="lbl">Days</span>
+    <!-- 3. MAIN WEDDING INVITATION -->
+    <main id="home">
+      <!-- HERO / INVITATION SECTION -->
+      <section class="section hero" id="invite">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="veil" aria-hidden="true"></div>
+        <div class="section-inner invitation-card reveal">
+          <!-- SUV Photography Logo at Top -->
+          <div class="hero-logo-wrap">
+            <a href="https://www.suvphotography.com/" target="_blank" rel="noopener" class="hero-logo-link" aria-label="SUV Photography Website">
+              <img src="assets/custom-logo-gold.png" alt="SUV Photography Logo" class="hero-logo" width="86" height="40" />
+            </a>
           </div>
-          <span class="sep" aria-hidden="true">:</span>
-          <div class="unit">
-            <div class="flip-card"><span class="num" data-h="">00</span></div>
-            <span class="lbl">Hours</span>
-          </div>
-          <span class="sep" aria-hidden="true">:</span>
-          <div class="unit">
-            <div class="flip-card"><span class="num" data-m="">00</span></div>
-            <span class="lbl">Minutes</span>
-          </div>
-          <span class="sep" aria-hidden="true">:</span>
-          <div class="unit">
-            <div class="flip-card"><span class="num" data-s="">00</span></div>
-            <span class="lbl">Seconds</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- CEREMONY DETAILS SECTION -->
-    <section id="ceremony" class="section bg-a bg-a-sangeeth">
-      <div class="bg-layer" aria-hidden="true"></div>
-      <div class="overlay overlay-ivory" aria-hidden="true"></div>
-      <div class="section-inner">
-        <div class="eyebrow reveal">The Auspicious Occasion</div>
-        <h2 class="section-title reveal">Wedding Celebrations</h2>
+          <p class="eyebrow">|| ஸ்ரீ முனீஸ்வரர் துணை ||</p>
+          <div class="ganesha">ॐ</div>
 
-        <div class="ornament-divider reveal" style="margin-top: 14px;">
-          <span class="line"></span>
-          <span class="diamond"></span>
-          <span class="line"></span>
-        </div>
+          <h1 class="main-couple">
+            <span class="main-name">Surendiran</span>
+            <span class="weds-word">weds</span>
+            <span class="main-name">Swetha</span>
+          </h1>
 
-        <p class="reveal"
-          style="max-width: 580px; margin: 12px auto 0; font-size: clamp(14px, 3.4vw, 16px); color: var(--deep-green); line-height: 1.7;">
-          Cordially solicit your esteemed presence with family and friends on the auspicious occasion of the marriage of
-          our youngest son as they embark on a beautiful journey of love and togetherness.
-        </p>
-
-        <!-- EVENTS GRID (Side-by-side on laptop, stacked on mobile) -->
-        <div class="events-grid">
-          <!-- EVENT 1: WEDDING CEREMONY / MUHURTHAM -->
-          <div class="corner-frame event-card reveal">
-            <div class="eyebrow" style="color: var(--gold-deep); font-size: 11px;">Auspicious Muhurtham &bull; திருமண
-              முகூர்த்தம்</div>
-            <div class="event-day" style="margin-top: 6px;">Sunday, 22nd November 2026</div>
-            <div
-              style="font-family: 'Noto Serif Tamil', serif; font-size: 13px; color: var(--gold-deep); margin-top: 2px;">
-              22-11-2026 ஞாயிற்றுக்கிழமை (கார்த்திகை 06)
+          <div class="parents-grid">
+            <div>
+              <b>S. Surendiran, <small style="font-size: 14px; font-weight: 600; color: var(--gold);">B.E.</small></b>
+              <small style="color: var(--wine); font-weight: 600;">Tamil Nadu Police</small>
+              <small>Son of Late Mr. M. Soundarraj (Rtd. S. Rly.) &amp;<br />Mrs. S. Senthamarai (Panchayat Co-ordinator)<br />Mosur, Arakkonam</small>
             </div>
-            <div
-              style="font-family: 'Noto Serif Tamil', serif; font-size: 12px; color: var(--brown); opacity: 0.85; margin-top: 2px;">
-              திரயோதசி திதி, அஸ்வினி நட்சத்திரம் சித்தயோகம் கூடிய சுபயோக சுபதினத்தில்
-            </div>
-
-            <div class="event-time" style="margin-top: 14px;">
-              <small>Muhurtham Time &bull; மணநேரம்</small>
-              07:30 AM – 09:00 AM
-              <div
-                style="font-family: 'Noto Serif Tamil', serif; font-size: 13px; font-weight: 500; color: var(--gold-deep); margin-top: 2px;">
-                காலை 7.30 மணிக்குமேல் 9.00 மணிக்குள் (விருச்சிக லக்கினத்தில்)
-              </div>
-            </div>
-
-            <div class="venue-label">Venue &bull; இடம்</div>
-            <div class="venue-name">Arulmigu Subramaniya Swamy Thirukoil</div>
-            <div
-              style="font-family: 'Noto Serif Tamil', serif; font-size: 14px; font-weight: 600; color: var(--deep-green); margin-top: 2px;">
-              அருள்மிகு சுப்பிரமணிய சுவாமி திருக்கோயில்
-            </div>
-            <div class="venue-place">Tiruttani &bull; திருத்தணி</div>
-
-            <div class="event-actions">
-              <a class="btn" href="https://maps.google.com/?q=Arulmigu+Subramanya+Swamy+Temple+Tiruttani"
-                target="_blank" rel="noopener">
-                View Location Map &rarr;
-              </a>
-              <a class="btn btn-secondary"
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Muhurtham+-+Surendiran+%26+Swetha&dates=20261122T020000Z/20261122T033000Z&details=Wedding+ceremony+of+S.+Surendiran+%26+R.+Swetha+at+Arulmigu+Subramaniya+Swamy+Thirukoil,+Tiruttani.&location=Arulmigu+Subramanya+Swamy+Temple+Tiruttani"
-                target="_blank" rel="noopener">
-                Add to Calendar &#128197;
-              </a>
+            <i>✦</i>
+            <div>
+              <b>R. Swetha, <small style="font-size: 14px; font-weight: 600; color: var(--gold);">M.Sc., B.Ed.</small></b>
+              <small style="color: var(--wine); font-weight: 600;">M.Sc., B.Ed.</small>
+              <small>Daughter of Late Mr. A. Ramachandran &amp;<br />Mrs. R. Janaki<br />Uliyanallur Village, Nemali</small>
             </div>
           </div>
 
-          <!-- EVENT 2: WEDDING RECEPTION -->
-          <div class="corner-frame event-card reveal">
-            <div class="eyebrow" style="color: var(--gold-deep); font-size: 11px;">Wedding Reception &bull; திருமண
-              வரவேற்பு</div>
-            <div class="event-day" style="margin-top: 6px;">Sunday, 22nd November 2026</div>
-            <div
-              style="font-family: 'Noto Serif Tamil', serif; font-size: 13px; color: var(--gold-deep); margin-top: 2px;">
-              22-11-2026 ஞாயிற்றுக்கிழமை அன்று மாலை
-            </div>
-
-            <div class="event-time" style="margin-top: 14px;">
-              <small>Reception Time &bull; வரவேற்பு நேரம்</small>
-              06:00 PM Onwards
-              <div
-                style="font-family: 'Noto Serif Tamil', serif; font-size: 13px; font-weight: 500; color: var(--gold-deep); margin-top: 2px;">
-                அன்று மாலை 6.00 மணியளவில்
-              </div>
-            </div>
-
-            <div class="venue-label">Venue &bull; இடம்</div>
-            <div class="venue-name">T. Narayanasamy Naidu Thirumana Mandapam</div>
-            <div
-              style="font-family: 'Noto Serif Tamil', serif; font-size: 14px; font-weight: 600; color: var(--deep-green); margin-top: 2px;">
-              T. நாராயணசாமி நாயுடு கல்யாண மண்டபம்
-            </div>
-            <div class="venue-place">T.N. Nagar, Palanipet, Arakkonam &bull; பழனிப்பேட்டை, T.N. நகர், அரக்கோணம்</div>
-
-            <div class="event-actions">
-              <a class="btn" href="https://maps.google.com/?q=T.+Narayanasamy+Naidu+Thirumana+Mandapam+Arakkonam"
-                target="_blank" rel="noopener">
-                View Location Map &rarr;
-              </a>
-              <a class="btn btn-secondary"
-                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+-+Surendiran+%26+Swetha&dates=20261122T123000Z/20261122T163000Z&details=Wedding+Reception+of+S.+Surendiran+%26+R.+Swetha+at+T.+Narayanasamy+Naidu+Thirumana+Mandapam,+Arakkonam.&location=T.+Narayanasamy+Naidu+Thirumana+Mandapam+Arakkonam"
-                target="_blank" rel="noopener">
-                Add to Calendar &#128197;
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COUPLE PROFILES & FAMILY DETAILS SECTION -->
-    <section id="family" class="section bg-a bg-a-family">
-      <div class="bg-layer" aria-hidden="true"></div>
-      <div class="overlay overlay-ivory" aria-hidden="true"></div>
-      <div class="section-inner">
-        <div class="eyebrow reveal">With the Blessings of Parents &amp; Elders</div>
-        <h2 class="section-title reveal">The Couple &amp; Family</h2>
-        <div class="ornament-divider reveal">
-          <span class="line"></span>
-          <span class="diamond"></span>
-          <span class="line"></span>
-        </div>
-
-        <div class="family-grid">
-          <!-- Groom Card -->
-          <div class="family-block reveal">
-            <div class="who">Groom &bull; மணமகன்</div>
-            <div class="parents">
-              Selvan. S. Surendiran, <span
-                style="font-size: 14px; font-weight: 500; color: var(--gold-deep);">B.E.</span>
-            </div>
-            <div
-              style="font-family: 'Noto Serif Tamil', serif; font-size: 16px; color: var(--deep-green); font-weight: 600; margin-top: 4px;">
-              செல்வன் S. சுரேந்திரன், <span style="font-size: 12px; font-weight: 500;">B.E.</span>
-            </div>
-            <div class="place"
-              style="margin-top: 8px; font-weight: 600; color: var(--gold-deep); letter-spacing: 0.05em;">
-              Tamil Nadu Police
-            </div>
-            <div class="place" style="margin-top: 8px; line-height: 1.5;">
-              <strong>Son of:</strong><br />
-              Late Mr. M. Soundarraj <small>(Rtd. S. Rly.)</small> &amp;<br />
-              Mrs. S. Senthamarai <small>(Panchayat Co-ordinator)</small><br />
-              Mosur, Arakkonam
-            </div>
-            <div
-              style="margin-top: 10px; font-size: 12px; color: var(--brown); opacity: 0.85; line-height: 1.5; font-family: 'Noto Serif Tamil', serif;">
-              தெய்வத்திரு. T. முனுசாமி - M. பாக்கியம்மாள் அவர்களின் மகன்வழி பேரன்<br />
-              தெய்வத்திரு. M. ஆறுமுகம் - திருமதி. A. ராணி அவர்களின் மகள்வழி பேரன்
-            </div>
-          </div>
-
-          <!-- Bride Card -->
-          <div class="family-block reveal">
-            <div class="who">Bride &bull; மணமகள்</div>
-            <div class="parents">
-              Selvi. R. Swetha, <span style="font-size: 14px; font-weight: 500; color: var(--gold-deep);">M.Sc.,
-                B.Ed.</span>
-            </div>
-            <div
-              style="font-family: 'Noto Serif Tamil', serif; font-size: 16px; color: var(--deep-green); font-weight: 600; margin-top: 4px;">
-              செல்வி R. சுவேதா, <span style="font-size: 12px; font-weight: 500;">M.Sc., B.Ed.</span>
-            </div>
-            <div class="place"
-              style="margin-top: 8px; font-weight: 600; color: var(--gold-deep); letter-spacing: 0.05em;">
-              M.Sc., B.Ed.
-            </div>
-            <div class="place" style="margin-top: 8px; line-height: 1.5;">
-              <strong>Daughter of:</strong><br />
-              Late Mr. A. Ramachandran &amp;<br />
-              Mrs. R. Janaki<br />
-              Uliyanallur Village, Nemali Taluk
-            </div>
-            <div
-              style="margin-top: 10px; font-size: 12px; color: var(--brown); opacity: 0.85; line-height: 1.5; font-family: 'Noto Serif Tamil', serif;">
-              தெய்வத்திரு. M. ஆறுமுகம் - திருமதி. A. ராணி அவர்களின் மகன்வழி பேத்தி<br />
-              தெய்வத்திரு. K. கண்ணப்பன் - K. அன்னம்மாள் அவர்களின் மகள்வழி பேத்தி
-            </div>
-          </div>
-        </div>
-
-        <!-- Traditional Tamil Invitation Message -->
-        <div class="reveal"
-          style="margin-top: 32px; max-width: 580px; padding: 18px 22px; border-radius: 8px; border: 1px solid rgba(181, 138, 58, 0.35); background: rgba(255, 248, 232, 0.7); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
-          <p
-            style="font-family: 'Noto Serif Tamil', serif; font-size: clamp(13px, 3vw, 15px); line-height: 1.8; color: var(--deep-green); margin: 0;">
-            அன்பும் அறனும் உடைத்தாயின் இல்வாழ்க்கை பண்பும் பயனும் அது.<br />
-            இவ்விருவரின் திருமணத்திற்கு தாங்கள் தங்கள் சுற்றமும் நட்பும் சூழ வருகை தந்து மணமக்களை வாழ்த்தி
-            ஆசீர்வதிக்குமாறு அன்புடன் அழைக்கின்றோம்.
+          <p class="quote">“Two hearts, two families,<br />one beautiful beginning.”</p>
+          
+          <p class="copy">
+            Together with their families, they cordially invite you to celebrate the joyous occasion of their wedding and bless the couple with your esteemed presence.
           </p>
-          <div
-            style="margin-top: 10px; font-family: var(--font-body); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600;">
-            அன்புடன் : சுற்றமும், நட்பும்
-          </div>
+
+          <span class="scroll-hint">SCROLL TO BEGIN <i>↓</i></span>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 3. PHOTO GALLERY SECTION -->
-    <section id="gallery" class="section bg-a bg-a-couple">
-      <div class="bg-layer" aria-hidden="true"></div>
-      <div class="overlay overlay-ivory" aria-hidden="true"></div>
-      <div class="section-inner">
-        <div class="eyebrow reveal">Moments of Togetherness</div>
-        <h2 class="section-title reveal">Photo Gallery &bull; புகைப்படங்கள்</h2>
-
-        <div class="ornament-divider reveal" style="margin-top: 14px;">
-          <span class="line"></span>
-          <span class="diamond"></span>
-          <span class="line"></span>
-        </div>
-
-        <p class="reveal"
-          style="max-width: 560px; margin: 10px auto 0; font-size: clamp(14px, 3.2vw, 16px); color: var(--deep-green); line-height: 1.6; font-style: italic;">
-          Capturing the laughter, tender smiles, and unforgettable memories on our journey to forever.
-        </p>
-
-        <!-- Gallery Photos Grid -->
-        <div class="gallery-grid" id="gallery-grid">
-          <!-- Photo 1 -->
-          <div class="photo-card reveal" data-index="0" data-caption="Melodies of Love — Two hearts beating as one"
-            data-src="assets/photo_1.jpg">
-            <div class="photo-card__paper">
-              <div class="photo-card__img-wrap">
-                <img src="assets/photo_1.jpg" alt="Surendiran and Swetha smiling together" loading="lazy" />
-              </div>
-              <div class="photo-card__caption">Melodies of Love</div>
-              <span class="photo-card__tag">Harmonies &bull; இசை</span>
+      <!-- SAVE THE DATE SECTION -->
+      <section class="section date-section" id="date">
+        <div class="section-inner reveal">
+          <p class="eyebrow">MARK YOUR CALENDAR</p>
+          <h2>SAVE <em>the</em> DATE</h2>
+          
+          <div class="date-big">
+            22 <span>•</span> 11 <span>•</span> 2026
+          </div>
+          
+          <p class="weekday">SUNDAY, 22 NOVEMBER 2026</p>
+          <p class="tamil-text" style="font-size: 13.5px; color: #6b1f3e; font-weight: 600; margin-top: 4px;">
+            பரபவ வருடம் கார்த்திகை மாதம் 06 &bull; ஞாயிற்றுக்கிழமை
+          </p>
+          
+          <div class="detail-line"></div>
+          
+          <div class="quick-details">
+            <div>
+              <strong>Auspicious Muhurtham</strong>
+              <span>07:30 AM – 09:00 AM (விருச்சிக லக்கினத்தில்)</span>
+              <span>Arulmigu Subramaniya Swamy Thirukoil, Tiruttani</span>
+            </div>
+            <div style="margin-top: 8px;">
+              <strong>Wedding Reception</strong>
+              <span>06:00 PM Onwards (மாலை 6.00 மணிமுதல்)</span>
+              <span>T. Narayanasamy Naidu Thirumana Mandapam, Arakkonam</span>
             </div>
           </div>
 
-          <!-- Photo 2 -->
-          <div class="photo-card reveal" data-index="1"
-            data-caption="Hand in Hand — A promise of lifelong companionship" data-src="assets/photo_2.jpg">
-            <div class="photo-card__paper">
-              <div class="photo-card__img-wrap">
-                <img src="assets/photo_2.jpg" alt="Surendiran and Swetha holding hands" loading="lazy" />
-              </div>
-              <div class="photo-card__caption">Hand in Hand</div>
-              <span class="photo-card__tag">Forever &bull; என்றும் பிரியாத</span>
-            </div>
-          </div>
-
-          <!-- Photo 3 -->
-          <div class="photo-card reveal" data-index="2" data-caption="A Sweet Affection — Blessed moments together"
-            data-src="assets/photo_3.jpg">
-            <div class="photo-card__paper">
-              <div class="photo-card__img-wrap">
-                <img src="assets/photo_3.jpg" alt="Romantic embrace under warm pendant lights" loading="lazy" />
-              </div>
-              <div class="photo-card__caption">A Sweet Affection</div>
-              <span class="photo-card__tag">Blessed &bull; பாசம்</span>
-            </div>
-          </div>
-
-          <!-- Photo 4 -->
-          <div class="photo-card reveal" data-index="3"
-            data-caption="Dancing into Tomorrow — Celebrating joy and smiles" data-src="assets/photo_4.jpg">
-            <div class="photo-card__paper">
-              <div class="photo-card__img-wrap">
-                <img src="assets/photo_4.jpg" alt="Couple dancing under glowing lights" loading="lazy" />
-              </div>
-              <div class="photo-card__caption">Dancing Into Tomorrow</div>
-              <span class="photo-card__tag">Joy &bull; ஆனந்தம்</span>
-            </div>
-          </div>
-
-          <!-- Photo 5 -->
-          <div class="photo-card reveal" data-index="4" data-caption="Tender Smiles — Every glance speaks of love"
-            data-src="assets/photo_5.jpg">
-            <div class="photo-card__paper">
-              <div class="photo-card__img-wrap">
-                <img src="assets/photo_5.jpg" alt="Swetha touching Surendiran's cheek affectionately" loading="lazy" />
-              </div>
-              <div class="photo-card__caption">Tender Smiles</div>
-              <span class="photo-card__tag">Pure Love &bull; அன்பு</span>
-            </div>
-          </div>
-
-          <!-- Photo 6 -->
-          <div class="photo-card reveal" data-index="5" data-caption="Sealed with Love — Where love story begins"
-            data-src="assets/photo_6.jpg">
-            <div class="photo-card__paper">
-              <div class="photo-card__img-wrap">
-                <img src="assets/photo_6.jpg" alt="Couple kissing hands under love sign" loading="lazy" />
-              </div>
-              <div class="photo-card__caption">Sealed With Love</div>
-              <span class="photo-card__tag">Celebration &bull; கொண்டாட்டம்</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLOSING FOOTER SECTION -->
-    <footer id="closing" class="section bg-a bg-a-hero">
-      <div class="bg-layer" aria-hidden="true"></div>
-      <div class="overlay overlay-ivory" aria-hidden="true"></div>
-      <div class="section-inner">
-        <svg class="lamp-svg reveal" width="38" height="38" viewBox="0 0 64 64" aria-hidden="true">
-          <path class="lamp-flame" d="M32 12c-2 4.5-6 7-6 12.5 0 3.6 2.7 6 6 6s6-2.4 6-6c0-5.5-4-8-6-12.5z" fill="none"
-            stroke="#B58A3A" stroke-width="1.6"></path>
-          <path d="M16 42c0-5 7-8.5 16-8.5s16 3.5 16 8.5-7 6-16 6-16-1-16-6z" fill="none" stroke="#B58A3A"
-            stroke-width="1.4"></path>
-          <line x1="32" y1="45" x2="32" y2="55" stroke="#B58A3A" stroke-width="1.4"></line>
-          <line x1="19" y1="55" x2="45" y2="55" stroke="#B58A3A" stroke-width="1.4"></line>
-        </svg>
-        <p class="closing-msg reveal" style="margin-top: 10px;">
-          Your gracious presence and blessings will make our special day truly memorable.
-        </p>
-        <div class="compliments-label reveal">With Love &amp; Blessings</div>
-        <div class="closing-names reveal-scale">Surendiran &amp; Swetha</div>
-        <div class="closing-date reveal">22 &middot; 11 &middot; 2026</div>
-
-        <div class="reveal"
-          style="margin-top: 18px; font-family: var(--font-body); font-size: 13px; color: var(--gold-deep); font-weight: 500;">
-          With best compliments from : Friends &amp; Relatives (சுற்றமும், நட்பும்)
-        </div>
-
-        <!-- Managed by SUV Photography Credit with Clickable Logo -->
-        <div class="site-credit reveal"
-          style="margin-top: 36px; padding-top: 18px; border-top: 1px solid rgba(181, 138, 58, 0.25);">
-          <a href="https://www.suvphotography.com/" target="_blank" rel="noopener" class="credit-logo-link"
-            aria-label="SUV Photography Website"
-            style="display: inline-flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; cursor: pointer;">
-            <img src="assets/custom-logo-gold.png" alt="SUV Photography Logo" width="76" height="35" class="credit-logo"
-              style="display: block; margin: 0 auto;" />
-            <span
-              style="font-family: var(--font-body); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600;">
-              Managed by <span class="credit-link"
-                style="color: var(--deep-green); text-decoration: underline; text-underline-offset: 3px;">SUV
-                Photography</span>
-            </span>
+          <a class="gold-btn" id="calendarBtn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+-+Surendiran+%26+Swetha&dates=20261122T020000Z/20261122T163000Z&details=Wedding+of+S.+Surendiran+%26+R.+Swetha.+Muhurtham+at+Tiruttani+Temple,+Reception+at+Arakkonam.&location=Arulmigu+Subramanya+Swamy+Temple+Tiruttani" target="_blank" rel="noopener">
+            ▣ &nbsp; Add to Google Calendar
           </a>
         </div>
-      </div>
-    </footer>
-  </main>
+      </section>
 
-  <!-- FULLSCREEN LIGHTBOX FOR PHOTO GALLERY -->
-  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo Viewer">
-    <button class="lightbox-close" id="lightbox-close" aria-label="Close photo viewer">&times;</button>
-    <button class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#10094;</button>
-    <button class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Next photo">&#10095;</button>
+      <!-- COUNTDOWN SECTION WITH ROSE PETAL RAIN -->
+      <section class="section countdown-section" id="countdown">
+        <div class="section-inner countdown-wrap reveal">
+          <p class="eyebrow">COUNTING DOWN TO OUR FOREVER</p>
 
-    <div class="lightbox-content">
-      <div class="lightbox-img-wrap">
-        <img id="lightbox-img" src="" alt="Enlarged photo view" />
-      </div>
-      <div class="lightbox-caption-bar">
-        <div class="lightbox-caption-text" id="lightbox-caption"></div>
-        <div class="lightbox-counter" id="lightbox-counter">1 of 6</div>
+          <div class="timer" id="timer">
+            <div>
+              <b id="days">00</b>
+              <span>DAYS</span>
+            </div>
+            <i>:</i>
+            <div>
+              <b id="hours">00</b>
+              <span>HOURS</span>
+            </div>
+            <i>:</i>
+            <div>
+              <b id="mins">00</b>
+              <span>MINUTES</span>
+            </div>
+            <i>:</i>
+            <div>
+              <b id="secs">00</b>
+              <span>SECONDS</span>
+            </div>
+          </div>
+
+          <div class="garland-stage">
+            <div class="rose-petal-rain" aria-hidden="true">
+              <span class="rose-petal rp1"></span>
+              <span class="rose-petal rp2"></span>
+              <span class="rose-petal rp3"></span>
+              <span class="rose-petal rp4"></span>
+              <span class="rose-petal rp5"></span>
+              <span class="rose-petal rp6"></span>
+              <span class="rose-petal rp7"></span>
+              <span class="rose-petal rp8"></span>
+              <span class="rose-petal rp9"></span>
+              <span class="rose-petal rp10"></span>
+              <span class="rose-petal rp11"></span>
+              <span class="rose-petal rp12"></span>
+              <span class="rose-petal rp13"></span>
+              <span class="rose-petal rp14"></span>
+              <span class="rose-petal rp15"></span>
+              <span class="rose-petal rp16"></span>
+              <span class="rose-petal rp17"></span>
+              <span class="rose-petal rp18"></span>
+              <span class="rose-petal rp19"></span>
+              <span class="rose-petal rp20"></span>
+              <span class="rose-petal rp21"></span>
+              <span class="rose-petal rp22"></span>
+              <span class="rose-petal rp23"></span>
+              <span class="rose-petal rp24"></span>
+            </div>
+            <img src="assets/garland-couple.png" alt="Bride placing garland on groom" class="garland-couple" />
+            <div class="garland-glow"></div>
+          </div>
+
+          <p class="moment-caption">A beautiful moment before a beautiful forever.</p>
+        </div>
+      </section>
+
+      <!-- WEDDING FESTIVITIES TIMELINE -->
+      <section class="section events-section" id="events">
+        <div class="timeline-bg" aria-hidden="true"></div>
+        <div class="veil dark" aria-hidden="true"></div>
+        <div class="section-inner events-wrap">
+          <div class="title-block reveal">
+            <p class="eyebrow">CELEBRATE WITH US</p>
+            <h2>Wedding <em>Festivities</em></h2>
+          </div>
+
+          <div class="event-list">
+            <!-- Event 1: Muhurtham -->
+            <article class="event-card reveal left">
+              <div class="event-photo wedding" aria-hidden="true"></div>
+              <div>
+                <span class="event-kicker">01 &bull; AUSPICIOUS MUHURTHAM</span>
+                <h3>Wedding Ceremony (மணநாள்)</h3>
+                <p>Sunday, 22 November 2026</p>
+                <p>07:30 AM – 09:00 AM (விருச்சிக லக்கினத்தில்)</p>
+                <small>Arulmigu Subramaniya Swamy Thirukoil, Tiruttani</small>
+              </div>
+            </article>
+
+            <!-- Event 2: Reception -->
+            <article class="event-card reveal right">
+              <div>
+                <span class="event-kicker">02 &bull; WEDDING RECEPTION</span>
+                <h3>Wedding Reception (வரவேற்பு)</h3>
+                <p>Sunday, 22 November 2026</p>
+                <p>06:00 PM Onwards (மாலை 6.00 மணிமுதல்)</p>
+                <small>T. Narayanasamy Naidu Thirumana Mandapam, Palanipet, Arakkonam</small>
+              </div>
+              <div class="event-photo reception" aria-hidden="true"></div>
+            </article>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 18px;">
+            <a class="gold-btn map-link" target="_blank" rel="noopener" href="https://maps.google.com/?q=Arulmigu+Subramanya+Swamy+Temple+Tiruttani">
+              ⌖ &nbsp; Tiruttani Temple Map
+            </a>
+            <a class="gold-btn map-link" target="_blank" rel="noopener" href="https://maps.google.com/?q=T.+Narayanasamy+Naidu+Thirumana+Mandapam+Arakkonam">
+              ⌖ &nbsp; Arakkonam Mandapam Map
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR MOMENTS PHOTO GALLERY -->
+      <section class="section gallery-section" id="gallery">
+        <div class="section-inner reveal">
+          <p class="eyebrow">OUR MOMENTS</p>
+          <h2>Little pieces of <em>us</em></h2>
+
+          <div class="gallery-shell">
+            <button class="gallery-arrow prev" id="galleryPrev" aria-label="Previous photo">‹</button>
+            <div class="gallery-viewport" id="galleryViewport">
+              <div class="gallery-track" id="galleryTrack">
+                <figure data-src="assets/photo_1.jpg" data-caption="Melodies of Love — Two souls, one promise of forever.">
+                  <img src="assets/photo_1.jpg" alt="Surendiran and Swetha smiling together" />
+                  <figcaption>Melodies of Love — Two souls, one promise of forever.</figcaption>
+                </figure>
+                <figure data-src="assets/photo_2.jpg" data-caption="Hand in Hand — Every moment with you feels like a blessing.">
+                  <img src="assets/photo_2.jpg" alt="Surendiran and Swetha holding hands" />
+                  <figcaption>Hand in Hand — Every moment with you feels like a blessing.</figcaption>
+                </figure>
+                <figure data-src="assets/photo_3.jpg" data-caption="A Sweet Affection — Blessed moments together under warm lights.">
+                  <img src="assets/photo_3.jpg" alt="Romantic embrace under warm pendant lights" />
+                  <figcaption>A Sweet Affection — Blessed moments together.</figcaption>
+                </figure>
+                <figure data-src="assets/photo_4.jpg" data-caption="Dancing Into Tomorrow — Celebrating our joy and laughter.">
+                  <img src="assets/photo_4.jpg" alt="Couple dancing under glowing lights" />
+                  <figcaption>Dancing Into Tomorrow — Celebrating our joy and laughter.</figcaption>
+                </figure>
+                <figure data-src="assets/photo_5.jpg" data-caption="Tender Smiles — Every glance speaks of true love.">
+                  <img src="assets/photo_5.jpg" alt="Swetha touching Surendiran's cheek affectionately" />
+                  <figcaption>Tender Smiles — Every glance speaks of true love.</figcaption>
+                </figure>
+                <figure data-src="assets/photo_6.jpg" data-caption="Sealed With Love — Where our forever story begins.">
+                  <img src="assets/photo_6.jpg" alt="Couple kissing hands under love sign" />
+                  <figcaption>Sealed With Love — Where our forever story begins.</figcaption>
+                </figure>
+              </div>
+            </div>
+            <button class="gallery-arrow next" id="galleryNext" aria-label="Next photo">›</button>
+          </div>
+
+          <div class="gallery-dots" id="galleryDots"></div>
+        </div>
+      </section>
+
+      <!-- FOREVER TOGETHER SECTION -->
+      <section class="section forever-section" id="forever">
+        <div class="lotus-bg" aria-hidden="true"></div>
+        <div class="section-inner forever-copy reveal">
+          <h2>
+            Forever<br />
+            <em>Together <span class="plain-infinity">∞</span></em>
+          </h2>
+          <p>
+            However near or far you travel,<br />
+            your blessings will always be<br />
+            part of our story.
+          </p>
+          <span>With love,</span>
+          <h3>Surendiran <b>♥</b> Swetha</h3>
+        </div>
+      </section>
+
+      <!-- LOCATION / VENUES SECTION -->
+      <section class="section location-section" id="location">
+        <div class="section-inner reveal location-card">
+          <p class="eyebrow">WHERE THE CELEBRATION HAPPENS</p>
+          <h2>Arulmigu Subramaniya Swamy Thirukoil</h2>
+          <p class="city">Tiruttani &amp; Arakkonam</p>
+
+          <div class="map-preview">
+            <span>⌖</span>
+            <p>
+              Muhurtham: Tiruttani Temple<br />
+              Reception: T. Narayanasamy Naidu Mandapam, Arakkonam
+            </p>
+          </div>
+
+          <a class="outline-btn" target="_blank" rel="noopener" href="https://maps.google.com/?q=Arulmigu+Subramanya+Swamy+Temple+Tiruttani">
+            Open in Google Maps ↗
+          </a>
+        </div>
+      </section>
+
+      <!-- CLOSING SECTION -->
+      <section class="section closing-section" id="closing">
+        <div class="closing-bg" aria-hidden="true"></div>
+        <div class="section-inner closing-copy reveal">
+          <span class="lantern">✦</span>
+          <h2>Thank You</h2>
+          <p>
+            for being a part of<br />
+            our happiness
+          </p>
+          <div class="love">♥</div>
+
+          <div style="margin-top: 30px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; color: #ffd77d; opacity: 0.9;">
+            With best compliments from : Friends &amp; Relatives (சுற்றமும், நட்பும்)
+          </div>
+
+          <!-- Managed by SUV Photography Credit -->
+          <div class="footer-credit">
+            <a href="https://www.suvphotography.com/" target="_blank" rel="noopener" class="footer-logo-link" aria-label="SUV Photography Website">
+              <img src="assets/custom-logo-gold.png" alt="SUV Photography Logo" class="footer-logo" width="80" height="36" />
+              <span class="footer-credit-text">
+                Managed by <span class="footer-credit-link">SUV Photography</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FULLSCREEN LIGHTBOX -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo Viewer">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">&times;</button>
+      <button class="lightbox-btn prev" id="lightboxPrev" aria-label="Previous photo">&#10094;</button>
+      <button class="lightbox-btn next" id="lightboxNext" aria-label="Next photo">&#10095;</button>
+      
+      <div class="lightbox-content">
+        <div class="lightbox-img-wrap">
+          <img id="lightboxImg" src="" alt="Enlarged photo" />
+        </div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+        <div class="lightbox-counter" id="lightboxCounter">1 of 6</div>
       </div>
     </div>
-  </div>
 
-  <!-- BACKGROUND MUSIC AUDIO -->
-  <audio id="bg-music" loop preload="none">
-    <source src="assets/wedding-music.mp3" type="audio/mpeg" />
-  </audio>
-
-  <!-- FLOATING MUSIC TOGGLE BUTTON -->
-  <button id="music-toggle" class="music-toggle is-hidden" aria-label="Toggle wedding music" aria-pressed="true">
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-      <path class="note-bar" d="M9 18V5.5l10-2v12.5" fill="none" stroke="currentColor" stroke-width="1.4"
-        stroke-linecap="round" stroke-linejoin="round"></path>
-      <circle class="note-head" cx="6.5" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle>
-      <circle class="note-head" cx="16.5" cy="15.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.4">
-      </circle>
-    </svg>
-  </button>
-
-  <!-- BACK TO TOP BUTTON -->
-  <button id="back-to-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-      <path d="M12 19V5M12 5l-6 6M12 5l6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-        stroke-linejoin="round"></path>
-    </svg>
-  </button>
-
-  <!-- GSAP & Animation Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
