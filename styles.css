@@ -700,6 +700,16 @@ h2 em {
   text-align: center;
 }
 
+.hero-subcopy {
+  font-size: clamp(12px, 2.6vw, 13px);
+  max-width: 380px;
+  margin: 10px auto 14px;
+  line-height: 1.55;
+  color: #55332c;
+  opacity: 0.92;
+  text-align: center;
+}
+
 /* Auspicious Thirukkural Blessing Card */
 .hero-kural {
   margin: 16px auto 20px;
