@@ -19,24 +19,34 @@
   <body>
     <!-- 1. INTERACTIVE TEMPLE DOOR OPENING SCREEN -->
     <div class="intro" id="intro" aria-label="Open invitation">
+      <canvas id="introCanvas" class="intro-canvas" aria-hidden="true"></canvas>
+      <div class="intro-burst" id="introBurst" aria-hidden="true"></div>
       <div class="door door-left" aria-hidden="true"></div>
       <div class="door door-right" aria-hidden="true"></div>
       <div class="intro-shade" aria-hidden="true"></div>
-      <div class="intro-sparkles" aria-hidden="true">
-        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-      </div>
+
       <button class="intro-center" id="openInvite" aria-label="Touch here to open">
-        <span class="spark">✦</span>
-        <span class="couple-script">Surendiran</span>
-        <span class="heart">♥</span>
-        <span class="couple-script">Swetha</span>
-        <span class="tap-ring" aria-hidden="true">
-          <svg viewBox="0 0 64 64" role="img" fill="none" stroke="currentColor">
-            <path d="M31 52V31.5a3.5 3.5 0 0 1 7 0v8l2.5-2.5a3.5 3.5 0 0 1 5 0l2 2 1.5-1.5a3.5 3.5 0 0 1 5 0l1 1a8 8 0 0 1 2.3 6.7L56 52c-.8 6-5.5 10-11.5 10H36c-5.8 0-10.7-3.8-12.4-9.3l-4.2-13.2a3.8 3.8 0 0 1 7.2-2.3l4.4 9.2V21a3.5 3.5 0 0 1 7 0v14.5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M20 16c0-7 5.4-12 12-12s12 5 12 12M13 19C13 8.5 21.5 0 32 0s19 8.5 19 19" stroke-width="2" stroke-linecap="round" opacity=".75"></path>
-          </svg>
-        </span>
-        <small>TOUCH HERE TO OPEN</small>
+        <div class="intro-halo" aria-hidden="true"></div>
+        <div class="intro-crest">
+          <span class="intro-om">ॐ</span>
+          <span class="intro-eyebrow">|| ஸ்ரீ முனீஸ்வரர் துணை ||</span>
+          <div class="intro-names">
+            <span class="couple-script name-groom">Surendiran</span>
+            <span class="heart-symbol">♥</span>
+            <span class="couple-script name-bride">Swetha</span>
+          </div>
+          <p class="intro-sub">INVITE YOU TO CELEBRATE THEIR WEDDING</p>
+          <div class="tap-ring" aria-hidden="true">
+            <span class="tap-pulse p1"></span>
+            <span class="tap-pulse p2"></span>
+            <span class="tap-pulse p3"></span>
+            <svg viewBox="0 0 64 64" class="hand-icon" role="img" fill="none" stroke="currentColor">
+              <path d="M31 52V31.5a3.5 3.5 0 0 1 7 0v8l2.5-2.5a3.5 3.5 0 0 1 5 0l2 2 1.5-1.5a3.5 3.5 0 0 1 5 0l1 1a8 8 0 0 1 2.3 6.7L56 52c-.8 6-5.5 10-11.5 10H36c-5.8 0-10.7-3.8-12.4-9.3l-4.2-13.2a3.8 3.8 0 0 1 7.2-2.3l4.4 9.2V21a3.5 3.5 0 0 1 7 0v14.5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M20 16c0-7 5.4-12 12-12s12 5 12 12M13 19C13 8.5 21.5 0 32 0s19 8.5 19 19" stroke-width="2" stroke-linecap="round" opacity=".8"></path>
+            </svg>
+          </div>
+          <small class="tap-label">TOUCH HERE TO OPEN</small>
+        </div>
       </button>
     </div>
 
@@ -44,7 +54,7 @@
     <audio id="bgMusic" loop preload="auto">
       <source src="assets/wedding-music.mp3" type="audio/mpeg" />
     </audio>
-    <button class="music-fab" id="musicBtn" aria-label="Play music">♫</button>
+    <button class="music-fab" id="musicBtn" aria-label="Play music" title="Play / Pause Wedding Music">♫</button>
 
     <!-- 3. MAIN WEDDING INVITATION -->
     <main id="home">
@@ -70,16 +80,24 @@
           </h1>
 
           <div class="parents-grid">
-            <div>
-              <b>S. Surendiran, <small style="font-size: 14px; font-weight: 600; color: var(--gold);">B.E.</small></b>
-              <small style="color: var(--wine); font-weight: 600;">Tamil Nadu Police</small>
-              <small>Son of Late Mr. M. Soundarraj (Rtd. S. Rly.) &amp;<br />Mrs. S. Senthamarai (Panchayat Co-ordinator)<br />Mosur, Arakkonam</small>
+            <div class="parent-col groom-col">
+              <b class="person-name">S. Surendiran, <small class="degree">B.E.</small></b>
+              <span class="designation">Tamil Nadu Police</span>
+              <p class="family-desc">
+                Son of Late Mr. M. Soundarraj <small class="rly">(Rtd. S. Rly.)</small> &amp;<br />
+                Mrs. S. Senthamarai <small class="panchayat">(Panchayat Co-ordinator)</small><br />
+                Mosur, Arakkonam
+              </p>
             </div>
-            <i>✦</i>
-            <div>
-              <b>R. Swetha, <small style="font-size: 14px; font-weight: 600; color: var(--gold);">M.Sc., B.Ed.</small></b>
-              <small style="color: var(--wine); font-weight: 600;">M.Sc., B.Ed.</small>
-              <small>Daughter of Late Mr. A. Ramachandran &amp;<br />Mrs. R. Janaki<br />Uliyanallur Village, Nemali</small>
+            <i class="parents-divider">✦</i>
+            <div class="parent-col bride-col">
+              <b class="person-name">R. Swetha, <small class="degree">M.Sc., B.Ed.</small></b>
+              <span class="designation">M.Sc., B.Ed.</span>
+              <p class="family-desc">
+                Daughter of Late Mr. A. Ramachandran &amp;<br />
+                Mrs. R. Janaki<br />
+                Uliyanallur Village, Nemali
+              </p>
             </div>
           </div>
 
@@ -89,7 +107,7 @@
             Together with their families, they cordially invite you to celebrate the joyous occasion of their wedding and bless the couple with your esteemed presence.
           </p>
 
-          <span class="scroll-hint">SCROLL TO BEGIN <i>↓</i></span>
+          <span class="scroll-hint">SCROLL TO BEGIN <i aria-hidden="true">↓</i></span>
         </div>
       </section>
 
@@ -104,26 +122,26 @@
           </div>
           
           <p class="weekday">SUNDAY, 22 NOVEMBER 2026</p>
-          <p class="tamil-text" style="font-size: 13.5px; color: #6b1f3e; font-weight: 600; margin-top: 4px;">
+          <p class="tamil-text date-tamil">
             பரபவ வருடம் கார்த்திகை மாதம் 06 &bull; ஞாயிற்றுக்கிழமை
           </p>
           
           <div class="detail-line"></div>
           
           <div class="quick-details">
-            <div>
+            <div class="quick-detail-item">
               <strong>Auspicious Muhurtham</strong>
-              <span>07:30 AM – 09:00 AM (விருச்சிக லக்கினத்தில்)</span>
-              <span>Arulmigu Subramaniya Swamy Thirukoil, Tiruttani</span>
+              <span class="timing">07:30 AM – 09:00 AM (விருச்சிக லக்கினத்தில்)</span>
+              <span class="venue">Arulmigu Subramaniya Swamy Thirukoil, Tiruttani</span>
             </div>
-            <div style="margin-top: 8px;">
+            <div class="quick-detail-item">
               <strong>Wedding Reception</strong>
-              <span>06:00 PM Onwards (மாலை 6.00 மணிமுதல்)</span>
-              <span>T. Narayanasamy Naidu Thirumana Mandapam, Arakkonam</span>
+              <span class="timing">06:00 PM Onwards (மாலை 6.00 மணிமுதல்)</span>
+              <span class="venue">T. Narayanasamy Naidu Thirumana Mandapam, Palanipet, Arakkonam</span>
             </div>
           </div>
 
-          <a class="gold-btn" id="calendarBtn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+-+Surendiran+%26+Swetha&dates=20261122T020000Z/20261122T163000Z&details=Wedding+of+S.+Surendiran+%26+R.+Swetha.+Muhurtham+at+Tiruttani+Temple,+Reception+at+Arakkonam.&location=Arulmigu+Subramanya+Swamy+Temple+Tiruttani" target="_blank" rel="noopener">
+          <a class="gold-btn calendar-btn" id="calendarBtn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+-+Surendiran+%26+Swetha&dates=20261122T020000Z/20261122T163000Z&details=Wedding+of+S.+Surendiran+%26+R.+Swetha.+Muhurtham+at+Tiruttani+Temple,+Reception+at+Arakkonam.&location=Arulmigu+Subramanya+Swamy+Temple+Tiruttani" target="_blank" rel="noopener">
             ▣ &nbsp; Add to Google Calendar
           </a>
         </div>
@@ -135,22 +153,22 @@
           <p class="eyebrow">COUNTING DOWN TO OUR FOREVER</p>
 
           <div class="timer" id="timer">
-            <div>
+            <div class="timer-box">
               <b id="days">00</b>
               <span>DAYS</span>
             </div>
-            <i>:</i>
-            <div>
+            <i class="timer-colon">:</i>
+            <div class="timer-box">
               <b id="hours">00</b>
               <span>HOURS</span>
             </div>
-            <i>:</i>
-            <div>
+            <i class="timer-colon">:</i>
+            <div class="timer-box">
               <b id="mins">00</b>
               <span>MINUTES</span>
             </div>
-            <i>:</i>
-            <div>
+            <i class="timer-colon">:</i>
+            <div class="timer-box">
               <b id="secs">00</b>
               <span>SECONDS</span>
             </div>
@@ -205,29 +223,29 @@
             <!-- Event 1: Muhurtham -->
             <article class="event-card reveal left">
               <div class="event-photo wedding" aria-hidden="true"></div>
-              <div>
+              <div class="event-text">
                 <span class="event-kicker">01 &bull; AUSPICIOUS MUHURTHAM</span>
                 <h3>Wedding Ceremony (மணநாள்)</h3>
-                <p>Sunday, 22 November 2026</p>
-                <p>07:30 AM – 09:00 AM (விருச்சிக லக்கினத்தில்)</p>
-                <small>Arulmigu Subramaniya Swamy Thirukoil, Tiruttani</small>
+                <p class="event-date">Sunday, 22 November 2026</p>
+                <p class="event-time">07:30 AM – 09:00 AM (விருச்சிக லக்கினத்தில்)</p>
+                <small class="event-venue">Arulmigu Subramaniya Swamy Thirukoil, Tiruttani</small>
               </div>
             </article>
 
             <!-- Event 2: Reception -->
             <article class="event-card reveal right">
-              <div>
+              <div class="event-text">
                 <span class="event-kicker">02 &bull; WEDDING RECEPTION</span>
                 <h3>Wedding Reception (வரவேற்பு)</h3>
-                <p>Sunday, 22 November 2026</p>
-                <p>06:00 PM Onwards (மாலை 6.00 மணிமுதல்)</p>
-                <small>T. Narayanasamy Naidu Thirumana Mandapam, Palanipet, Arakkonam</small>
+                <p class="event-date">Sunday, 22 November 2026</p>
+                <p class="event-time">06:00 PM Onwards (மாலை 6.00 மணிமுதல்)</p>
+                <small class="event-venue">T. Narayanasamy Naidu Thirumana Mandapam, Palanipet, Arakkonam</small>
               </div>
               <div class="event-photo reception" aria-hidden="true"></div>
             </article>
           </div>
 
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 18px;">
+          <div class="map-buttons-wrap">
             <a class="gold-btn map-link" target="_blank" rel="noopener" href="https://maps.google.com/?q=Arulmigu+Subramanya+Swamy+Temple+Tiruttani">
               ⌖ &nbsp; Tiruttani Temple Map
             </a>
@@ -294,8 +312,8 @@
             your blessings will always be<br />
             part of our story.
           </p>
-          <span>With love,</span>
-          <h3>Surendiran <b>♥</b> Swetha</h3>
+          <span class="with-love-tag">With love,</span>
+          <h3 class="forever-names">Surendiran <b>♥</b> Swetha</h3>
         </div>
       </section>
 
@@ -307,10 +325,10 @@
           <p class="city">Tiruttani &amp; Arakkonam</p>
 
           <div class="map-preview">
-            <span>⌖</span>
-            <p>
-              Muhurtham: Tiruttani Temple<br />
-              Reception: T. Narayanasamy Naidu Mandapam, Arakkonam
+            <span class="map-pin">⌖</span>
+            <p class="venue-info">
+              <strong>Muhurtham:</strong> Tiruttani Subramaniya Swamy Temple<br />
+              <strong>Reception:</strong> T. Narayanasamy Naidu Mandapam, Arakkonam
             </p>
           </div>
 
@@ -332,7 +350,7 @@
           </p>
           <div class="love">♥</div>
 
-          <div style="margin-top: 30px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; color: #ffd77d; opacity: 0.9;">
+          <div class="compliments-text">
             With best compliments from : Friends &amp; Relatives (சுற்றமும், நட்பும்)
           </div>
 

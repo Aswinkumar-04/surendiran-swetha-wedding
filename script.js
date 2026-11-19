@@ -2,17 +2,115 @@
   "use strict";
 
   /* ---------------------------------------------------------
-     1. TEMPLE DOOR OPENING ANIMATION
+     1. GOLDEN DUST & SPARKLES CANVAS ANIMATION FOR INTRO
+  --------------------------------------------------------- */
+  var canvas = document.getElementById('introCanvas');
+  var ctx = canvas ? canvas.getContext('2d') : null;
+  var particles = [];
+  var animFrameId = null;
+  var isDoorOpened = false;
+
+  function resizeCanvas() {
+    if (!canvas) return;
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    if (ctx) ctx.scale(dpr, dpr);
+  }
+
+  function createParticles() {
+    if (!canvas) return;
+    particles = [];
+    var count = Math.min(window.innerWidth < 600 ? 35 : 65, 80);
+    var colors = [
+      'rgba(255, 238, 185, ',
+      'rgba(255, 215, 125, ',
+      'rgba(245, 186, 75, ',
+      'rgba(255, 248, 220, '
+    ];
+
+    for (var i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        radius: Math.random() * 2.2 + 0.8,
+        colorBase: colors[Math.floor(Math.random() * colors.length)],
+        baseAlpha: Math.random() * 0.6 + 0.3,
+        pulseSpeed: Math.random() * 0.03 + 0.01,
+        pulseOffset: Math.random() * Math.PI * 2,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: -(Math.random() * 0.6 + 0.2), // slow upward drift
+        swaySpeed: Math.random() * 0.02 + 0.01,
+        swayRange: Math.random() * 1.2 + 0.5
+      });
+    }
+  }
+
+  var tick = 0;
+  function renderParticles() {
+    if (!ctx || !canvas || isDoorOpened) return;
+    tick++;
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+
+      // Update position
+      p.y += p.vy;
+      p.x += Math.sin(tick * p.swaySpeed + p.pulseOffset) * p.swayRange * 0.3 + p.vx;
+
+      // Wrap around bounds
+      if (p.y < -10) p.y = window.innerHeight + 10;
+      if (p.x < -10) p.x = window.innerWidth + 10;
+      if (p.x > window.innerWidth + 10) p.x = -10;
+
+      // Opacity pulsation (shimmering sparkle effect)
+      var currentAlpha = p.baseAlpha + Math.sin(tick * p.pulseSpeed + p.pulseOffset) * 0.3;
+      if (currentAlpha < 0.05) currentAlpha = 0.05;
+      if (currentAlpha > 1) currentAlpha = 1;
+
+      // Draw particle with soft halo
+      ctx.beginPath();
+      var gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 3.2);
+      gradient.addColorStop(0, p.colorBase + currentAlpha + ')');
+      gradient.addColorStop(0.5, p.colorBase + (currentAlpha * 0.4) + ')');
+      gradient.addColorStop(1, p.colorBase + '0)');
+
+      ctx.fillStyle = gradient;
+      ctx.arc(p.x, p.y, p.radius * 3.2, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Sharp central spark
+      ctx.beginPath();
+      ctx.fillStyle = p.colorBase + currentAlpha + ')';
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    animFrameId = requestAnimationFrame(renderParticles);
+  }
+
+  if (canvas) {
+    resizeCanvas();
+    createParticles();
+    renderParticles();
+    window.addEventListener('resize', function () {
+      resizeCanvas();
+      createParticles();
+    }, { passive: true });
+  }
+
+  /* ---------------------------------------------------------
+     2. TEMPLE DOOR OPENING ANIMATION
   --------------------------------------------------------- */
   var intro = document.getElementById('intro');
   var openInvite = document.getElementById('openInvite');
   var bgMusic = document.getElementById('bgMusic');
   var musicBtn = document.getElementById('musicBtn');
-  var isOpened = false;
 
   function openDoors() {
-    if (isOpened) return;
-    isOpened = true;
+    if (isDoorOpened) return;
+    isDoorOpened = true;
 
     if (intro) {
       intro.classList.add('open');
@@ -21,33 +119,35 @@
     // Start background music
     playMusic();
 
+    // Clean up canvas loop after doors complete swing
     setTimeout(function () {
+      if (animFrameId) cancelAnimationFrame(animFrameId);
       if (intro) {
         intro.classList.add('done');
       }
-    }, 1400);
+    }, 1500);
   }
 
   if (openInvite) {
     openInvite.addEventListener('click', openDoors);
   }
 
-  // Also allow pressing Enter or Space to open
+  // Also allow pressing Enter or Space or Escape to open
   document.addEventListener('keydown', function (e) {
-    if (!isOpened && (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape')) {
+    if (!isDoorOpened && (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape')) {
       openDoors();
     }
   });
 
   /* ---------------------------------------------------------
-     2. FLOATING MUSIC FAB CONTROLLER
+     3. FLOATING MUSIC FAB CONTROLLER
   --------------------------------------------------------- */
   function playMusic() {
     if (!bgMusic) return;
     bgMusic.play().then(function () {
       if (musicBtn) musicBtn.classList.add('playing');
     }).catch(function (e) {
-      console.log('Audio autoplay blocked, click music button to start:', e);
+      console.log('Audio autoplay blocked, tap music button to start:', e);
     });
   }
 
@@ -68,7 +168,7 @@
   }
 
   /* ---------------------------------------------------------
-     3. WEDDING COUNTDOWN (22 November 2026, 07:30 AM IST)
+     4. WEDDING COUNTDOWN (22 November 2026, 07:30 AM IST)
   --------------------------------------------------------- */
   var targetDate = new Date('2026-11-22T07:30:00+05:30').getTime();
   var daysEl = document.getElementById('days');
@@ -100,7 +200,7 @@
   setInterval(updateCountdown, 1000);
 
   /* ---------------------------------------------------------
-     4. PHOTO GALLERY CAROUSEL
+     5. PHOTO GALLERY CAROUSEL
   --------------------------------------------------------- */
   var track = document.getElementById('galleryTrack');
   var prevBtn = document.getElementById('galleryPrev');
@@ -178,21 +278,21 @@
 
   // Touch swipe support for gallery carousel
   var galleryViewport = document.getElementById('galleryViewport');
-  var startX = 0;
-  var endX = 0;
+  var touchStartX = 0;
+  var touchEndX = 0;
 
   if (galleryViewport) {
     galleryViewport.addEventListener('touchstart', function (e) {
-      startX = e.changedTouches[0].screenX;
+      touchStartX = e.changedTouches[0].screenX;
       if (slideTimer) clearInterval(slideTimer);
     }, { passive: true });
 
     galleryViewport.addEventListener('touchend', function (e) {
-      endX = e.changedTouches[0].screenX;
+      touchEndX = e.changedTouches[0].screenX;
       var threshold = 40;
-      if (endX < startX - threshold) {
+      if (touchEndX < touchStartX - threshold) {
         goToSlide(currentSlide + 1);
-      } else if (endX > startX + threshold) {
+      } else if (touchEndX > touchStartX + threshold) {
         goToSlide(currentSlide - 1);
       }
       resetAutoSlide();
@@ -200,7 +300,7 @@
   }
 
   /* ---------------------------------------------------------
-     5. FULLSCREEN LIGHTBOX
+     6. FULLSCREEN LIGHTBOX
   --------------------------------------------------------- */
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightboxImg');
@@ -272,7 +372,7 @@
   });
 
   /* ---------------------------------------------------------
-     6. SCROLL REVEAL OBSERVER
+     7. SCROLL REVEAL OBSERVER
   --------------------------------------------------------- */
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
@@ -282,7 +382,7 @@
           entry.target.classList.add('show');
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
     reveals.forEach(function (el) {
       observer.observe(el);
@@ -294,7 +394,7 @@
   }
 
   /* ---------------------------------------------------------
-     7. SUV PHOTOGRAPHY LOGO REDIRECTS
+     8. SUV PHOTOGRAPHY LOGO REDIRECTS
   --------------------------------------------------------- */
   var suvLinks = document.querySelectorAll('.hero-logo-link, .footer-logo-link');
   suvLinks.forEach(function (el) {
