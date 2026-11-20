@@ -17,7 +17,7 @@
   --soft: #f6e9d6;
   --serif: "Bodoni Moda", "Cormorant Garamond", Georgia, serif;
   --script: "Great Vibes", cursive;
-  --honey: "Honey Script", "Great Vibes", cursive;
+  --honey: "Great Vibes", cursive;
   --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --tamil: "Noto Serif Tamil", serif;
 }
@@ -118,7 +118,7 @@ button, a {
   bottom: 0;
   width: 50%;
   height: 100%;
-  background-image: url('assets/entrance-temple.png');
+  background-image: url('assets/entrance-temple.jpg');
   background-repeat: no-repeat;
   will-change: transform;
   transition: transform 1.6s cubic-bezier(0.2, 0.85, 0.25, 1), filter 1.2s ease;
@@ -588,7 +588,7 @@ h2 em {
 }
 
 .hero-bg {
-  background-image: url('assets/invitation-elephant.png');
+  background-image: url('assets/invitation-elephant.jpg');
 }
 
 .veil {
@@ -843,7 +843,7 @@ h2 em {
    ========================================================================== */
 .date-section {
   background-color: #f9e8e9;
-  background-image: linear-gradient(rgba(255, 247, 244, 0.25), rgba(255, 247, 244, 0.25)), url('assets/save-date-pink-luxury.png');
+  background-image: linear-gradient(rgba(255, 247, 244, 0.25), rgba(255, 247, 244, 0.25)), url('assets/save-date-pink-luxury.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1296,7 +1296,7 @@ h2 em {
 }
 
 .timeline-bg {
-  background-image: url('assets/timeline-temple.png');
+  background-image: url('assets/timeline-temple.jpg');
   filter: brightness(0.55) saturate(0.95);
 }
 
@@ -1462,7 +1462,7 @@ h2 em {
    8. PHOTO GALLERY SECTION (#gallery)
    ========================================================================== */
 .gallery-section {
-  background-image: linear-gradient(rgba(255, 249, 240, 0.2), rgba(255, 249, 240, 0.2)), url('assets/our-moments-gold.png');
+  background-image: linear-gradient(rgba(255, 249, 240, 0.2), rgba(255, 249, 240, 0.2)), url('assets/our-moments-gold.jpg');
   background-size: cover;
   background-position: center;
   padding: 90px 16px;
@@ -1592,7 +1592,7 @@ h2 em {
 }
 
 .lotus-bg {
-  background-image: url('assets/lotus-kolam.png');
+  background-image: url('assets/lotus-kolam.jpg');
   background-position: center;
   background-size: cover;
   opacity: 0.8;

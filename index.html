@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/honey-script" />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -51,7 +50,7 @@
     </div>
 
     <!-- 2. BACKGROUND WEDDING MUSIC AUDIO & FLOATING PLAYER -->
-    <audio id="bgMusic" loop preload="auto">
+    <audio id="bgMusic" loop preload="none">
       <source src="assets/wedding-music.mp3" type="audio/mpeg" />
     </audio>
     <button class="music-fab" id="musicBtn" aria-label="Play music" title="Play / Pause Wedding Music">♫</button>
@@ -308,27 +307,27 @@
             <div class="gallery-viewport" id="galleryViewport">
               <div class="gallery-track" id="galleryTrack">
                 <figure data-src="assets/photo_1.jpg" data-caption="Melodies of Love — Two souls, one promise of forever.">
-                  <img src="assets/photo_1.jpg" alt="Surendaran and Swetha smiling together" />
+                  <img src="assets/photo_1.jpg" alt="Surendaran and Swetha smiling together" decoding="async" />
                   <figcaption>Melodies of Love — Two souls, one promise of forever.</figcaption>
                 </figure>
                 <figure data-src="assets/photo_2.jpg" data-caption="Hand in Hand — Every moment with you feels like a blessing.">
-                  <img src="assets/photo_2.jpg" alt="Surendaran and Swetha holding hands" />
+                  <img src="assets/photo_2.jpg" alt="Surendaran and Swetha holding hands" loading="lazy" decoding="async" />
                   <figcaption>Hand in Hand — Every moment with you feels like a blessing.</figcaption>
                 </figure>
                 <figure data-src="assets/photo_3.jpg" data-caption="A Sweet Affection — Blessed moments together under warm lights.">
-                  <img src="assets/photo_3.jpg" alt="Romantic embrace under warm pendant lights" />
+                  <img src="assets/photo_3.jpg" alt="Romantic embrace under warm pendant lights" loading="lazy" decoding="async" />
                   <figcaption>A Sweet Affection — Blessed moments together.</figcaption>
                 </figure>
                 <figure data-src="assets/photo_4.jpg" data-caption="Dancing Into Tomorrow — Celebrating our joy and laughter.">
-                  <img src="assets/photo_4.jpg" alt="Couple dancing under glowing lights" />
+                  <img src="assets/photo_4.jpg" alt="Couple dancing under glowing lights" loading="lazy" decoding="async" />
                   <figcaption>Dancing Into Tomorrow — Celebrating our joy and laughter.</figcaption>
                 </figure>
                 <figure data-src="assets/photo_5.jpg" data-caption="Tender Smiles — Every glance speaks of true love.">
-                  <img src="assets/photo_5.jpg" alt="Swetha touching Surendaran's cheek affectionately" />
+                  <img src="assets/photo_5.jpg" alt="Swetha touching Surendaran's cheek affectionately" loading="lazy" decoding="async" />
                   <figcaption>Tender Smiles — Every glance speaks of true love.</figcaption>
                 </figure>
                 <figure data-src="assets/photo_6.jpg" data-caption="Sealed With Love — Where our forever story begins.">
-                  <img src="assets/photo_6.jpg" alt="Couple kissing hands under love sign" />
+                  <img src="assets/photo_6.jpg" alt="Couple kissing hands under love sign" loading="lazy" decoding="async" />
                   <figcaption>Sealed With Love — Where our forever story begins.</figcaption>
                 </figure>
               </div>
@@ -403,6 +402,6 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

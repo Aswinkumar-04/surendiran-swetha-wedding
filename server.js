@@ -1,25 +1,34 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
 const PORT = 3000;
 const BASE_DIR = __dirname;
 
 const MIME_TYPES = {
-  '.html': 'text/html',
-  '.css': 'text/css',
-  '.js': 'application/javascript',
-  '.json': 'application/json',
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.gif': 'image/gif',
-  '.svg': 'image/svg+xml',
+  '.svg': 'image/svg+xml; charset=utf-8',
   '.ico': 'image/x-icon',
   '.mp3': 'audio/mpeg',
   '.mp4': 'video/mp4',
   '.woff2': 'font/woff2'
 };
+
+const COMPRESSIBLE = new Set([
+  'text/html; charset=utf-8',
+  'text/css; charset=utf-8',
+  'application/javascript; charset=utf-8',
+  'application/json; charset=utf-8',
+  'image/svg+xml; charset=utf-8'
+]);
 
 const server = http.createServer((req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
@@ -56,22 +65,46 @@ const server = http.createServer((req, res) => {
         'Content-Range': `bytes ${start}-${end}/${stats.size}`,
         'Accept-Ranges': 'bytes',
         'Content-Length': chunkSize,
-        'Content-Type': contentType
+        'Content-Type': contentType,
+        'Cache-Control': 'public, max-age=86400'
       });
       stream.pipe(res);
       return;
     }
     
-    res.writeHead(200, {
-      'Content-Length': stats.size,
-      'Content-Type': contentType,
-      'Cache-Control': 'no-cache'
-    });
-    fs.createReadStream(filePath).pipe(res);
+    // Determine caching policy
+    let cacheControl = 'public, max-age=600'; // default 10 min for css/js
+    if (ext === '.html') {
+      cacheControl = 'no-cache';
+    } else if (reqPath.startsWith('/assets/')) {
+      cacheControl = 'public, max-age=31536000, immutable'; // 1 year for static media assets
+    }
+    
+    // Check if client accepts gzip and file is compressible
+    const acceptEncoding = req.headers['accept-encoding'] || '';
+    const shouldGzip = COMPRESSIBLE.has(contentType) && acceptEncoding.includes('gzip') && stats.size > 512;
+    
+    if (shouldGzip) {
+      res.writeHead(200, {
+        'Content-Type': contentType,
+        'Content-Encoding': 'gzip',
+        'Cache-Control': cacheControl,
+        'Vary': 'Accept-Encoding'
+      });
+      const raw = fs.createReadStream(filePath);
+      const gzip = zlib.createGzip({ level: 6 });
+      raw.pipe(gzip).pipe(res);
+    } else {
+      res.writeHead(200, {
+        'Content-Length': stats.size,
+        'Content-Type': contentType,
+        'Cache-Control': cacheControl
+      });
+      fs.createReadStream(filePath).pipe(res);
+    }
   });
 });
 
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`Wedding invitation server running at http://localhost:${PORT}/`);
 });
-
